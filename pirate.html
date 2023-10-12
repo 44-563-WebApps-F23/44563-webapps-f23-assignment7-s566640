@@ -29,6 +29,7 @@
     <div id="help" style="color:rgb(58, 5, 5); background-color: rgb(134, 232, 201);font-family: 'Times New Roman';" id="click" onclick="help()">
         Help report
     </div><br>
+    <button id="newGameButton" onclick="newGame()">New Game</button>
 <h4 style="text-align: center; font-family: 'Times New Roman', Times, serif;">World of Treasures</h4>
 
     <div class="container">
@@ -191,6 +192,29 @@
           
       }
       document.getElementById("help").textContent = helpText;
+
+      function newGame() {
+    checkCount = 0;
+    penalty = 0;
+    lastCheck = 0;
+    gameOver = false;
+
+    treasureLocation = Math.floor(Math.random() * 25);
+
+    do {
+        trapLocation = Math.floor(Math.random() * 25);
+
+    } while (trapLocation === treasureLocation);
+
+    document.getElementById("locations").innerHTML = "Number of locations checked is : " + checkCount;
+    document.getElementById("penalty").innerHTML = "Penalty is : " + penalty;
+    document.getElementById("help").textContent = "Help report";
+
+    for (var i = 0; i < 25; i++) 
+    {
+        document.getElementById(ids[i]).src = "bear.jpg"
+    }
+}
   
   </script>
 
